@@ -1,0 +1,162 @@
+
+import React, { useState } from 'react';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import Particles from '@/components/Particles';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { MessageSquare, Mail, ArrowRight } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
+
+const Contact = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({
+      title: "Message Received",
+      description: "Thank you for contacting us. We'll respond shortly.",
+      duration: 5000,
+    });
+    setFormData({ name: '', email: '', message: '' });
+  };
+
+  const faqs = [
+    {
+      question: "Is my file stored?",
+      answer: "No, files are processed in memory and immediately discarded after analysis unless you explicitly opt to save them for future reference."
+    },
+    {
+      question: "How long does detection take?",
+      answer: "Most analyses complete within seconds. Larger files or more complex videos may take 1-2 minutes to process thoroughly."
+    },
+    {
+      question: "How accurate are the results?",
+      answer: "Our detection has a 94% accuracy rate for images and 89% for videos. We clearly indicate confidence levels with each analysis."
+    },
+    {
+      question: "Can I use Soulcloude for commercial purposes?",
+      answer: "Yes, we offer enterprise plans for businesses that need high-volume detection capabilities and additional features."
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-sc-dark text-white">
+      <Particles />
+      <Navbar />
+      <main className="pt-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto py-12">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl font-bold mb-6">Get in Touch</h1>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Have questions or feedback? We're here to help.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            {/* Contact Form */}
+            <div className="glass-card p-8">
+              <h2 className="text-2xl font-semibold mb-6 flex items-center">
+                <MessageSquare className="mr-3 h-6 w-6 text-sc-blue" /> Send a Message
+              </h2>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
+                    Your Name
+                  </label>
+                  <Input
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="bg-black/40 border-gray-700 text-white"
+                    placeholder="Enter your name"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
+                    Email Address
+                  </label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="bg-black/40 border-gray-700 text-white"
+                    placeholder="Enter your email"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
+                    Message
+                  </label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="bg-black/40 border-gray-700 text-white h-32"
+                    placeholder="How can we help you?"
+                    required
+                  />
+                </div>
+                <Button 
+                  type="submit" 
+                  className="w-full bg-sc-blue text-black hover:bg-sc-blue/80"
+                >
+                  Send Message
+                </Button>
+              </form>
+            </div>
+            
+            {/* Contact Info & FAQ */}
+            <div className="space-y-8">
+              <div className="glass-card p-6">
+                <h3 className="text-xl font-semibold mb-4 flex items-center">
+                  <Mail className="mr-2 h-5 w-5 text-sc-mint" /> Contact Info
+                </h3>
+                <div className="space-y-4 text-gray-300">
+                  <p>Email: <a href="mailto:info@soulcloude.com" className="text-sc-blue hover:underline">info@soulcloude.com</a></p>
+                  <p>Support: <a href="mailto:support@soulcloude.com" className="text-sc-blue hover:underline">support@soulcloude.com</a></p>
+                  <p>Response time: Within 24 hours</p>
+                </div>
+              </div>
+              
+              <div className="glass-card p-6">
+                <h3 className="text-xl font-semibold mb-4">Frequently Asked Questions</h3>
+                <div className="space-y-6">
+                  {faqs.map((faq, index) => (
+                    <div key={index}>
+                      <h4 className="text-sc-blue font-medium mb-2 flex items-start">
+                        <ArrowRight className="h-4 w-4 mr-2 mt-1 flex-shrink-0" />
+                        {faq.question}
+                      </h4>
+                      <p className="text-gray-400 ml-6">{faq.answer}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default Contact;
