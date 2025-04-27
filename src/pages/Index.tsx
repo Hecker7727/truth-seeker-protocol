@@ -4,7 +4,6 @@ import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import HowItWorks from '@/components/HowItWorks';
 import WhySoulcloude from '@/components/WhySoulcloude';
-import LiveDemo from '@/components/LiveDemo';
 import Testimonials from '@/components/Testimonials';
 import Footer from '@/components/Footer';
 import Particles from '@/components/Particles';
@@ -18,7 +17,6 @@ const Index = () => {
         <HeroSection />
         <HowItWorks />
         <WhySoulcloude />
-        <LiveDemo />
         <Testimonials />
       </main>
       <Footer />

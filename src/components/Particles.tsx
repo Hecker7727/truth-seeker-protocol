@@ -9,6 +9,7 @@ interface Particle {
   color: string;
   animationDuration: string;
   delay: string;
+  opacity: number;
 }
 
 const Particles = () => {
@@ -17,7 +18,7 @@ const Particles = () => {
   useEffect(() => {
     const colors = ['bg-sc-blue/30', 'bg-sc-violet/30', 'bg-sc-mint/30'];
     const generateParticles = () => {
-      const particlesCount = window.innerWidth < 768 ? 15 : 30;
+      const particlesCount = window.innerWidth < 768 ? 20 : 40;
       const newParticles: Particle[] = [];
       
       for (let i = 0; i < particlesCount; i++) {
@@ -28,7 +29,8 @@ const Particles = () => {
           size: Math.random() * (window.innerWidth < 768 ? 4 : 8) + 2,
           color: colors[Math.floor(Math.random() * colors.length)],
           animationDuration: `${Math.random() * 15 + 10}s`,
-          delay: `-${Math.random() * 20}s`
+          delay: `-${Math.random() * 20}s`,
+          opacity: Math.random() * 0.3 + 0.1
         });
       }
       
@@ -50,14 +52,15 @@ const Particles = () => {
       {particles.map((particle) => (
         <div
           key={particle.id}
-          className={`particle ${particle.color}`}
+          className={`particle ${particle.color} animate-pulse-slow`}
           style={{
             left: `${particle.x}%`,
             top: `${particle.y}%`,
             width: `${particle.size}px`,
             height: `${particle.size}px`,
             animationDuration: particle.animationDuration,
-            animationDelay: particle.delay
+            animationDelay: particle.delay,
+            opacity: particle.opacity
           }}
         />
       ))}
