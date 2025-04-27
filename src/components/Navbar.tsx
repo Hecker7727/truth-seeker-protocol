@@ -29,9 +29,6 @@ const Navbar = () => {
               <Link to="/" className="px-3 py-2 text-sm font-medium text-white hover:text-sc-blue transition-colors">
                 Home
               </Link>
-              <Link to="/detect" className="px-3 py-2 text-sm font-medium text-white hover:text-sc-blue transition-colors">
-                Detect
-              </Link>
               <Link to="/about" className="px-3 py-2 text-sm font-medium text-white hover:text-sc-blue transition-colors">
                 About Us
               </Link>
@@ -61,7 +58,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu, show/hide based on menu state */}
+      {/* Mobile menu */}
       {isMenuOpen && (
         <div className="md:hidden glass-card m-2 rounded-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
@@ -71,13 +68,6 @@ const Navbar = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Home
-            </Link>
-            <Link 
-              to="/detect" 
-              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-black/30 hover:text-sc-blue"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Detect
             </Link>
             <Link 
               to="/about" 

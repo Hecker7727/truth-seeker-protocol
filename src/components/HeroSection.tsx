@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Button } from './ui/button';
-import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 const HeroSection = () => {
@@ -16,45 +15,20 @@ const HeroSection = () => {
           Analyze images, videos, and audio. Instantly uncover hidden manipulations with the power of AI.
         </p>
         
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button 
-            asChild
-            size="lg"
-            className="bg-gradient-to-r from-sc-blue to-sc-violet neon-glow text-lg font-medium text-black hover:shadow-lg hover:scale-105 transition-all duration-300"
-          >
-            <Link to="/detect">
-              Try Detection Now
-            </Link>
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            asChild
-            className="bg-transparent border border-sc-violet/50 text-sc-violet text-lg font-medium hover:bg-sc-violet/10 hover:shadow-lg hover:scale-105 transition-all duration-300"
-            onClick={() => {
-              const howItWorksSection = document.getElementById('how-it-works');
-              if (howItWorksSection) {
-                howItWorksSection.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-          >
-            <a href="#how-it-works">
-              Learn More <ArrowRight className="ml-2 h-5 w-5" />
-            </a>
-          </Button>
-        </div>
-      </div>
-
-      {/* Scanner animation */}
-      <div className="mt-16 relative w-full max-w-md mx-auto glass-card p-4 overflow-hidden">
-        <img 
-          src="/placeholder.svg" 
-          alt="Scanning demo"
-          className="w-full h-auto rounded-lg object-cover"
-        />
-        <div className="scan-line"></div>
-        <div className="absolute inset-0 rounded-lg border border-sc-blue/30 backdrop-blur-sm"></div>
+        {/* Learn More Button */}
+        <Button
+          variant="outline"
+          size="lg"
+          className="bg-transparent border border-sc-violet/50 text-sc-violet text-lg font-medium hover:bg-sc-violet/10 hover:shadow-lg hover:scale-105 transition-all duration-300"
+          onClick={() => {
+            const howItWorksSection = document.getElementById('how-it-works');
+            if (howItWorksSection) {
+              howItWorksSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
+        >
+          Learn More <ArrowRight className="ml-2 h-5 w-5" />
+        </Button>
       </div>
       
       {/* Scroll down indicator */}
