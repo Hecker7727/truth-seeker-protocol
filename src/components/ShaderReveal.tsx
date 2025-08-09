@@ -23,15 +23,16 @@ vec2 pixelize(vec2 uv, float px) {
 }
 
 void main(){
-  float px = 10.0 + 8.0 * (0.5 + 0.5 * sin(u_time * 0.8));
+  // Slow down pixel size modulation
+  float px = 10.0 + 8.0 * (0.5 + 0.5 * sin(u_time * 0.2));
   vec2 uv = pixelize(v_uv, px);
 
-  // Animated gradient with subtle noise-like shimmer
-  float wave = 0.5 + 0.5 * sin(uv.x * 6.283 + u_time * 0.6) * cos(uv.y * 6.283 + u_time * 0.4);
+  // Slow gradient motion
+  float wave = 0.5 + 0.5 * sin(uv.x * 6.283 + u_time * 0.2) * cos(uv.y * 6.283 + u_time * 0.15);
   vec3 c1 = vec3(0.0);
   vec3 c2 = vec3(0.36, 0.88, 0.90); // sc-blue
   vec3 c3 = vec3(0.84, 0.69, 1.0);  // sc-violet-ish
-  vec3 color = mix(mix(c1, c2, wave), c3, 0.25 * (0.5 + 0.5 * sin(u_time * 0.3)));
+  vec3 color = mix(mix(c1, c2, wave), c3, 0.25 * (0.5 + 0.5 * sin(u_time * 0.1)));
 
   gl_FragColor = vec4(color, 1.0);
 }`;
