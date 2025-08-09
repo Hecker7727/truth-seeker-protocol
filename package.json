@@ -62,6 +62,7 @@
     "zod": "^3.23.8",
     "matter-js": "^0.20.0"
   },
+  "packageManager": "npm@10.9.2",
   "devDependencies": {
     "@eslint/js": "^9.9.0",
     "@tailwindcss/typography": "^0.5.15",
