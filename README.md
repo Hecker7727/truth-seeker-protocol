@@ -71,3 +71,13 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+
+# SoulCloude
+
+This project is a Vite + React site.
+
+## Cloudflare Pages
+- Build command: `npm run build`
+- Output directory: `dist`
+- Package manager: npm (package-lock.json). Remove bun.lockb to avoid bun in CI.
+- SPA routing: `public/_redirects` with `/* /index.html 200`
