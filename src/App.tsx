@@ -13,7 +13,7 @@ import Learn from "./pages/Learn";
 import Trust from "./pages/Trust";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-import TransitionCurtain from '@/components/transitions/TransitionCurtain';
+import TransitionNano from '@/components/transitions/TransitionNano';
 
 const queryClient = new QueryClient();
 
@@ -21,7 +21,7 @@ const AppRoutes = () => {
   const location = useLocation();
   return (
     <>
-      <TransitionCurtain routeKey={location.pathname} />
+      <TransitionNano routeKey={location.pathname} />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Layout><PageContainer><Index /></PageContainer></Layout>} />
