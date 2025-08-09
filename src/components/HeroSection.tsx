@@ -8,10 +8,10 @@ const HeroSection = () => {
     <div className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
       <div className="text-center max-w-4xl mx-auto">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 fade-in text-transparent bg-clip-text bg-gradient-to-r from-sc-blue via-sc-violet to-sc-mint">
-          Soulcloude – Unmasking AI, One Pixel at a Time
+          SoulCloude — One brand. Unlimited ideas.
         </h1>
         <p className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto slide-up opacity-0" style={{ animationDelay: '0.3s' }}>
-          Analyze images, videos, and audio. Instantly uncover hidden manipulations with the power of AI.
+          A developer-powered venture studio. Bring your idea, plug into our team and tools, launch under the SoulCloude brand, and share the revenue.
         </p>
         
         <Button

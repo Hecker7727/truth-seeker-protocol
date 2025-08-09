@@ -7,6 +7,7 @@ import WhySoulcloude from '@/components/WhySoulcloude';
 import Testimonials from '@/components/Testimonials';
 import Footer from '@/components/Footer';
 import Particles from '@/components/Particles';
+import Portfolio from '@/components/Portfolio';
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <HowItWorks />
+        <Portfolio />
         <WhySoulcloude />
         <Testimonials />
       </main>

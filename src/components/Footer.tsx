@@ -13,11 +13,11 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-1">
             <Link to="/" className="flex items-center">
               <span className="font-poppins text-xl font-bold text-white">
-                soul<span className="text-sc-blue">cloude</span>
+                Soul<span className="text-sc-blue">Cloude</span>
               </span>
             </Link>
             <p className="mt-2 text-sm text-gray-400">
-              Unmasking AI, one pixel at a time. Detect deepfakes and preserve truth.
+              One brand. Unlimited ideas. Build with us and share the revenue.
             </p>
           </div>
 
@@ -26,8 +26,8 @@ const Footer = () => {
             <h3 className="text-sm font-semibold text-sc-blue mb-4">Navigate</h3>
             <ul className="space-y-2">
               <li><Link to="/" className="text-sm text-gray-400 hover:text-white">Home</Link></li>
-              <li><Link to="/detect" className="text-sm text-gray-400 hover:text-white">Detect</Link></li>
               <li><Link to="/about" className="text-sm text-gray-400 hover:text-white">About Us</Link></li>
+              <li><Link to="/learn" className="text-sm text-gray-400 hover:text-white">Learn</Link></li>
             </ul>
           </div>
 
@@ -52,7 +52,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-xs text-gray-500">© {currentYear} Soulcloude. All rights reserved.</p>
+          <p className="text-xs text-gray-500">© {currentYear} SoulCloude. All rights reserved.</p>
           <div className="mt-4 sm:mt-0 flex space-x-6">
             {/* Social links */}
             <a href="#" className="text-gray-400 hover:text-sc-blue">
