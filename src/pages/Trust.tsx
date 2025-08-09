@@ -71,7 +71,6 @@ const Trust = () => {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

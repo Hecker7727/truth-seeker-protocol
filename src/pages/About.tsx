@@ -51,7 +51,6 @@ const About = () => {
         </div>
         <TeamGrid />
       </main>
-      <Footer />
     </div>
   );
 };

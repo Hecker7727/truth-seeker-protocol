@@ -40,4 +40,11 @@ const LoaderOverlay: React.FC<{ onDone?: () => void }> = ({ onDone }) => {
   );
 };
 
+export const setGlobalLoader = (pct: number) => {
+  try {
+    const ev = new CustomEvent('sc-loader-progress', { detail: { pct } });
+    window.dispatchEvent(ev);
+  } catch {}
+};
+
 export default LoaderOverlay;

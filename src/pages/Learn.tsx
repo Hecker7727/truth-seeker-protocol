@@ -64,7 +64,6 @@ const Learn = () => {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

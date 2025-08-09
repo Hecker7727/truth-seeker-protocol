@@ -13,11 +13,13 @@ import DramaticHero from '@/components/hero/DramaticHero';
 import Marquee from '@/components/sections/Marquee';
 import TiltCards from '@/components/sections/TiltCards';
 import StickyNarrative from '@/components/sections/StickyNarrative';
+import ShaderReveal from '@/components/ShaderReveal';
 
 const Index = () => {
   return (
     <main>
       <DramaticHero />
+      <ShaderReveal />
       <Marquee />
       <HowItWorks />
       <StickyNarrative />
