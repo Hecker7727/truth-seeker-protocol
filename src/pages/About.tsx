@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Particles from '@/components/Particles';
 import MouseTrail from '@/components/MouseTrail';
+import PhysicsBackground from '@/components/PhysicsBackground';
 import { Shield, Eye, Database, Check } from 'lucide-react';
 import AboutHero from '@/components/about/AboutHero';
 import Pillars from '@/components/about/Pillars';
@@ -28,7 +29,7 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-sc-dark text-white overflow-x-hidden">
-      <MouseTrail />
+      <PhysicsBackground />
       <Particles />
       <Navbar />
       <main className="pt-0">
