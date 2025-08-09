@@ -14,11 +14,13 @@ import Marquee from '@/components/sections/Marquee';
 import TiltCards from '@/components/sections/TiltCards';
 import StickyNarrative from '@/components/sections/StickyNarrative';
 import ShaderReveal from '@/components/ShaderReveal';
+import NeonGridBackground from '@/components/NeonGridBackground';
 
 const Index = () => {
   return (
     <main>
       <div className="fixed inset-0 -z-10 pointer-events-none"><ShaderReveal /></div>
+      <div className="fixed inset-0 -z-10 pointer-events-none"><NeonGridBackground /></div>
       <DramaticHero />
       <Marquee />
       <HowItWorks />
