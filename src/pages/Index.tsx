@@ -18,8 +18,8 @@ import ShaderReveal from '@/components/ShaderReveal';
 const Index = () => {
   return (
     <main>
+      <div className="fixed inset-0 -z-10 pointer-events-none"><ShaderReveal /></div>
       <DramaticHero />
-      <ShaderReveal />
       <Marquee />
       <HowItWorks />
       <StickyNarrative />

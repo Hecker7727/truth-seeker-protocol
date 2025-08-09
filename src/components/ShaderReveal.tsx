@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-// Lightweight WebGL shader reveal using raw WebGL API to avoid heavy deps
-// This is a simplified effect that reveals a gradient mask behind text as time progresses.
+// Full-viewport pixel fill effect using raw WebGL
 
 const vertexSrc = `
 attribute vec2 a_position;
@@ -16,14 +15,25 @@ precision mediump float;
 varying vec2 v_uv;
 uniform float u_time;
 uniform vec2 u_res;
+
+// Pixelate helper
+vec2 pixelize(vec2 uv, float px) {
+  vec2 size = u_res / px;
+  return floor(uv * size) / size;
+}
+
 void main(){
-  // radial mask sweep
-  vec2 p = v_uv - 0.5;
-  float r = length(p);
-  float t = fract(u_time * 0.2);
-  float mask = smoothstep(t, t + 0.2, 1.0 - r);
-  vec3 col = mix(vec3(0.0), vec3(0.36, 0.88, 0.90), mask);
-  gl_FragColor = vec4(col, mask);
+  float px = 10.0 + 8.0 * (0.5 + 0.5 * sin(u_time * 0.8));
+  vec2 uv = pixelize(v_uv, px);
+
+  // Animated gradient with subtle noise-like shimmer
+  float wave = 0.5 + 0.5 * sin(uv.x * 6.283 + u_time * 0.6) * cos(uv.y * 6.283 + u_time * 0.4);
+  vec3 c1 = vec3(0.0);
+  vec3 c2 = vec3(0.36, 0.88, 0.90); // sc-blue
+  vec3 c3 = vec3(0.84, 0.69, 1.0);  // sc-violet-ish
+  vec3 color = mix(mix(c1, c2, wave), c3, 0.25 * (0.5 + 0.5 * sin(u_time * 0.3)));
+
+  gl_FragColor = vec4(color, 1.0);
 }`;
 
 function createShader(gl: WebGLRenderingContext, type: number, source: string) {
@@ -63,7 +73,7 @@ const ShaderReveal: React.FC = () => {
 
     const resize = () => {
       canvas.width = window.innerWidth;
-      canvas.height = 240;
+      canvas.height = window.innerHeight; // full viewport
       gl.viewport(0, 0, canvas.width, canvas.height);
       gl.uniform2f(uRes, canvas.width, canvas.height);
     };
@@ -88,11 +98,8 @@ const ShaderReveal: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative">
-      <canvas ref={canvasRef} className="w-full h-[240px] pointer-events-none" />
-      <div className="absolute inset-0 flex items-center justify-center">
-        <h2 className="text-4xl font-bold text-white mix-blend-overlay">Revealing Potential</h2>
-      </div>
+    <div className="relative w-full h-screen">
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none" />
     </div>
   );
 };
