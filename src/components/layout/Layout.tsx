@@ -1,41 +1,39 @@
-import React, { useEffect, useState } from 'react';
-import PhysicsBackground from '@/components/PhysicsBackground';
+import React, { Suspense, useEffect } from 'react';
 import Particles from '@/components/Particles';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import ThreeBackground from '@/components/ThreeBackground';
 import Lenis from 'lenis';
+import { chooseBackground, isReducedMotion } from '@/lib/perf';
+
+const ThreeBackground = React.lazy(() => import('@/components/ThreeBackground'));
+const PhysicsBackground = React.lazy(() => import('@/components/PhysicsBackground'));
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [loading, setLoading] = useState(true);
-
   useEffect(() => {
-    const lenis = new Lenis({ duration: 1.2, easing: (t: number) => 1 - Math.pow(1 - t, 3), smoothWheel: true });
-    const raf = (time: number) => { lenis.raf(time); requestAnimationFrame(raf); };
-    const r = requestAnimationFrame(raf);
-    const timer = setTimeout(() => setLoading(false), 1200);
-
-    const onProgress = (e: any) => {
-      // If a route triggers preloading, briefly show loader at top (no block)
-      const bar = document.querySelector('[data-sc-loader-bar]') as HTMLElement | null;
-      if (bar) bar.style.width = `${Math.min(100, Math.max(0, e.detail?.pct ?? 0))}%`;
-    };
-    window.addEventListener('sc-loader-progress', onProgress as any);
-
-    return () => { cancelAnimationFrame(r); clearTimeout(timer); window.removeEventListener('sc-loader-progress', onProgress as any); };
+    if (isReducedMotion()) return;
+    const lenis = new Lenis({ duration: 1.1, easing: (t: number) => 1 - Math.pow(1 - t, 3) });
+    let rafId = requestAnimationFrame(function raf(time) { lenis.raf(time); rafId = requestAnimationFrame(raf); });
+    const onVis = () => { if (document.hidden) lenis.stop(); else lenis.start(); };
+    document.addEventListener('visibilitychange', onVis);
+    return () => { cancelAnimationFrame(rafId); document.removeEventListener('visibilitychange', onVis); };
   }, []);
+
+  const engine = typeof window !== 'undefined' ? chooseBackground() : 'none';
 
   return (
     <div className="min-h-screen bg-sc-dark text-white">
-      {/* Lightweight top progress bar for route preloads */}
+      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:bg-black focus:text-white focus:px-3 focus:py-1 rounded">Skip to content</a>
+      {/* Top progress bar remains for preloads */}
       <div className="fixed top-0 left-0 right-0 z-[95] h-[2px] bg-white/5">
         <div data-sc-loader-bar className="h-full w-0 bg-gradient-to-r from-sc-blue via-sc-violet to-sc-mint transition-[width] duration-200" />
       </div>
-      <ThreeBackground />
+      <Suspense fallback={null}>
+        {engine === 'three' && <ThreeBackground />}
+        {engine === 'matter' && <PhysicsBackground />}
+      </Suspense>
       <Particles />
-      <PhysicsBackground />
       <Navbar />
-      {children}
+      <div id="main">{children}</div>
       <Footer />
     </div>
   );

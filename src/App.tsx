@@ -14,11 +14,31 @@ import Trust from "./pages/Trust";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import TransitionNano from '@/components/transitions/TransitionNano';
+import { setGlobalLoader } from '@/components/LoaderOverlay';
+import React, { useEffect } from 'react';
 
-const queryClient = new QueryClient();
+// Lazy-load heavy sections
+const DramaticHero = React.lazy(() => import('@/components/hero/DramaticHero'));
+const Marquee = React.lazy(() => import('@/components/sections/Marquee'));
+const TiltCards = React.lazy(() => import('@/components/sections/TiltCards'));
+const StickyNarrative = React.lazy(() => import('@/components/sections/StickyNarrative'));
+const Portfolio = React.lazy(() => import('@/components/Portfolio'));
+const WhySoulcloude = React.lazy(() => import('@/components/WhySoulcloude'));
+const Testimonials = React.lazy(() => import('@/components/Testimonials'));
+
+// Hook into route changes for progress bar indication
+function useRouteProgress() {
+  const location = useLocation();
+  useEffect(() => {
+    let p = 0;
+    const id = setInterval(() => { p = Math.min(95, p + 5); setGlobalLoader(p); }, 80);
+    return () => { clearInterval(id); setGlobalLoader(100); setTimeout(() => setGlobalLoader(0), 300); };
+  }, [location.pathname]);
+}
 
 const AppRoutes = () => {
   const location = useLocation();
+  useRouteProgress();
   return (
     <>
       <TransitionNano routeKey={location.pathname} />
@@ -35,6 +55,8 @@ const AppRoutes = () => {
     </>
   );
 };
+
+const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
