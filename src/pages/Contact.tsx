@@ -55,15 +55,13 @@ const Contact = () => {
     <div className="min-h-screen bg-sc-dark text-white">
       <Particles />
       <Navbar />
-      <main className="pt-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto py-12">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl font-bold mb-6">Get in Touch</h1>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Have questions or feedback? We're here to help.
-            </p>
+      <main className="pt-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-sc-blue via-sc-violet to-sc-mint">Get in Touch</h1>
+            <p className="text-xl text-gray-300">Propose an idea, join a product, or partner with us.</p>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             {/* Contact Form */}
             <div className="glass-card p-8">
@@ -122,13 +120,11 @@ const Contact = () => {
                 </Button>
               </form>
             </div>
-            
+
             {/* Contact Info & FAQ */}
             <div className="space-y-8">
               <div className="glass-card p-6">
-                <h3 className="text-xl font-semibold mb-4 flex items-center">
-                  <Mail className="mr-2 h-5 w-5 text-sc-mint" /> Contact Info
-                </h3>
+                <h3 className="text-xl font-semibold mb-4">Contact Info</h3>
                 <div className="space-y-4 text-gray-300">
                   <p>Email: <a href="mailto:info@soulcloude.com" className="text-sc-blue hover:underline">info@soulcloude.com</a></p>
                   <p>Support: <a href="mailto:support@soulcloude.com" className="text-sc-blue hover:underline">support@soulcloude.com</a></p>

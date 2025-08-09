@@ -16,22 +16,16 @@ import StickyNarrative from '@/components/sections/StickyNarrative';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-sc-dark text-white">
-      <Particles />
-      <PhysicsBackground />
-      <Navbar />
-      <main>
-        <DramaticHero />
-        <Marquee />
-        <HowItWorks />
-        <StickyNarrative />
-        <TiltCards />
-        <Portfolio />
-        <WhySoulcloude />
-        <Testimonials />
-      </main>
-      <Footer />
-    </div>
+    <main>
+      <DramaticHero />
+      <Marquee />
+      <HowItWorks />
+      <StickyNarrative />
+      <TiltCards />
+      <Portfolio />
+      <WhySoulcloude />
+      <Testimonials />
+    </main>
   );
 };
 
