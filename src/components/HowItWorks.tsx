@@ -6,18 +6,28 @@ const HowItWorks = () => {
   const steps = [
     {
       icon: <Upload className="h-12 w-12 text-sc-blue" />,
-      title: "Advanced Detection Technology",
-      description: "State-of-the-art AI models trained to identify synthetic content."
+      title: "Dev Joins with an Idea",
+      description: "Bring a product idea and your dev skills — from concept to MVP."
     },
     {
       icon: <Search className="h-12 w-12 text-sc-violet" />,
-      title: "Comprehensive Analysis",
-      description: "Detailed examination of patterns and anomalies across multiple content types."
+      title: "Onboarding & Team Support",
+      description: "SoulCloude assigns collaborators, tools, and shared infrastructure."
     },
     {
       icon: <CheckCircle className="h-12 w-12 text-sc-mint" />,
-      title: "Real-time Protection",
-      description: "Instant verification helping you stay ahead of digital deception."
+      title: "Build Collaboratively",
+      description: "Ship fast with our playbooks, design system, and review process."
+    },
+    {
+      icon: <CheckCircle className="h-12 w-12 text-sc-mint" />,
+      title: "Launch Under One Brand",
+      description: "Your product ships as part of the SoulCloude portfolio (e.g., DevToolX, APIHub)."
+    },
+    {
+      icon: <CheckCircle className="h-12 w-12 text-sc-mint" />,
+      title: "Share the Revenue",
+      description: "Contributors earn based on impact. SoulCloude retains a platform share."
     }
   ];
 
@@ -25,9 +35,9 @@ const HowItWorks = () => {
     <section id="how-it-works" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Our Technology</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">How SoulCloude Works</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Powered by cutting-edge AI and backed by continuous research to protect digital truth.
+            Your idea. Our platform. Everyone's team.
           </p>
         </div>
         

@@ -8,23 +8,23 @@ const WhySoulcloude = () => {
   const features = [
     {
       icon: <Eye className="h-8 w-8 text-sc-blue animate-float" />,
-      title: "AI Detection",
-      description: "Our advanced algorithms detect AI-generated content with unparalleled accuracy."
+      title: "No Solo Dev Struggle",
+      description: "Plug into a ready team, design system, infra, and ship faster."
     },
     {
       icon: <ShieldCheck className="h-8 w-8 text-sc-mint animate-float" />,
-      title: "Data Privacy",
-      description: "Your security is our priority. Zero permanent storage, full transparency."
+      title: "One Brand, Many Products",
+      description: "Build under SoulCloude and leverage shared credibility and reach."
     },
     {
       icon: <Database className="h-8 w-8 text-sc-violet animate-float" />,
-      title: "Deepfake Exposure",
-      description: "Instantly identify synthetic media across images, video, and audio."
+      title: "Community-Powered",
+      description: "Contributors earn from real revenue. Reputation and impact matter."
     },
     {
       icon: <Sparkles className="h-8 w-8 text-sc-blue animate-float" />,
-      title: "Future-Proof",
-      description: "Continuously evolving algorithms to stay ahead of emerging AI threats."
+      title: "Platform-as-a-Studio",
+      description: "Structured playbooks, templates, and tooling — not chaos."
     }
   ];
 
@@ -33,12 +33,10 @@ const WhySoulcloude = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 animate-fade-in">Why Soulcloude?</h2>
-            <p className="text-xl text-sc-blue font-semibold mb-6 animate-fade-in">"Truth is fragile. Soulcloude protects it."</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 animate-fade-in">Why SoulCloude?</h2>
+            <p className="text-xl text-sc-blue font-semibold mb-6 animate-fade-in">"One brand. Unlimited ideas. Infinite revenue streams."</p>
             <p className="text-gray-400 mb-8 animate-fade-in">
-              In an era where AI can create increasingly convincing fake content, 
-              verifying authenticity becomes crucial. We provide the tools and expertise 
-              to distinguish between reality and synthetic media.
+              SoulCloude is a developer-powered venture studio. Developers bring ideas; we help build, launch, and scale under a unified brand.
             </p>
             <div className="glass-card p-6 neon-border-violet transform hover:scale-105 transition-all duration-300">
               <p className="text-white italic">

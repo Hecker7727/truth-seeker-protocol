@@ -12,36 +12,12 @@ const Learn = () => {
   const { toast } = useToast();
   
   const articles = [
-    {
-      title: "What are Deepfakes?",
-      excerpt: "Understanding the technology behind synthetic media and how it's evolving.",
-      category: "Fundamentals"
-    },
-    {
-      title: "How AI Alters Reality",
-      excerpt: "Exploring the methods AI uses to generate and manipulate digital content.",
-      category: "Technology"
-    },
-    {
-      title: "Recognizing Synthetic Voices",
-      excerpt: "Learn the telltale signs of AI-generated audio and speech patterns.",
-      category: "Detection"
-    },
-    {
-      title: "Common Tells of AI-Generated Content",
-      excerpt: "Key indicators that can help identify artificially created media.",
-      category: "Tips"
-    },
-    {
-      title: "History of Digital Hoaxes",
-      excerpt: "From photoshop to deepfakes: the evolution of digital manipulation.",
-      category: "History"
-    },
-    {
-      title: "The Future of Truth Verification",
-      excerpt: "How technology is adapting to combat increasingly sophisticated fake content.",
-      category: "Future"
-    }
+    { title: "How SoulCloude Works", excerpt: "Bring an idea, build with the platform, launch under one brand.", category: "Overview" },
+    { title: "Revenue Sharing Guide", excerpt: "Understand contribution tracking and payouts.", category: "Economics" },
+    { title: "Contribution Levels", excerpt: "Roles, expectations, and how to grow your impact.", category: "Community" },
+    { title: "Studio Playbook", excerpt: "Product templates, design system, and review process.", category: "Playbook" },
+    { title: "Legal & IP Basics", excerpt: "Ownership, licensing, and contributor agreements.", category: "Legal" },
+    { title: "Launch Checklist", excerpt: "From MVP to public release with confidence.", category: "Go-to-market" },
   ];
   
   const handleArticleClick = () => {
@@ -59,9 +35,9 @@ const Learn = () => {
       <main className="pt-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto py-12">
           <div className="text-center mb-16">
-            <h1 className="text-4xl font-bold mb-6">Knowledge Protects You</h1>
+            <h1 className="text-4xl font-bold mb-6">Learn to Build with SoulCloude</h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Learn how AI manipulation works and how to detect it.
+              Resources for contributors and founders building on the platform.
             </p>
           </div>
           
@@ -88,21 +64,21 @@ const Learn = () => {
           </div>
           
           <div className="glass-card p-8 text-center mb-12">
-            <h2 className="text-2xl font-semibold mb-4">Can You Spot the Deepfake?</h2>
+            <h2 className="text-2xl font-semibold mb-4">Get the Playbook</h2>
             <p className="text-gray-300 mb-6">
-              Test your skills with our interactive quiz. Sharpen your ability to identify artificially generated content.
+              Our contributor playbook and templates are coming soon. Join the waitlist to get early access.
             </p>
             <Button 
               className="bg-sc-blue text-black hover:bg-sc-blue/80"
               onClick={() => {
                 toast({
                   title: "Coming Soon",
-                  description: "Interactive quiz will be available in our next update.",
+                  description: "Playbook access will be available in our next update.",
                   duration: 3000,
                 });
               }}
             >
-              Try the Quiz
+              Join the Waitlist
             </Button>
           </div>
         </div>

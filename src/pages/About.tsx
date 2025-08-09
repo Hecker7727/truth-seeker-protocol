@@ -7,47 +7,19 @@ import MouseTrail from '@/components/MouseTrail';
 import { Shield, Eye, Database, Check } from 'lucide-react';
 
 const About = () => {
-  const projectName = "TruthGuard"; // The child project name under Soulcloude
+  const projectName = "SoulCloude";
   
   const timeline = [
-    {
-      year: "2023",
-      title: "Vision Born",
-      description: "The rise of AI deepfakes inspired the Soulcloude mission."
-    },
-    {
-      year: "2024",
-      title: "TruthGuard Launch",
-      description: "Our first project focused on AI detection launches."
-    },
-    {
-      year: "2025",
-      title: "Global Impact",
-      description: "Expanding our reach to protect digital truth worldwide."
-    }
+    { year: "2024", title: "Founding", description: "SoulCloude is formed as a developer-powered venture studio." },
+    { year: "2025", title: "First Cohort", description: "Launches include DevToolX, APIHub, and EduGame." },
+    { year: "2026", title: "Ecosystem Growth", description: "Expanding the portfolio with community-built products." }
   ];
 
   const principles = [
-    {
-      icon: <Eye className="h-8 w-8" />,
-      title: "Transparency",
-      description: "We're open about how our technology works and its limitations."
-    },
-    {
-      icon: <Database className="h-8 w-8" />,
-      title: "Intelligence",
-      description: "Our AI is continuously learning to stay ahead of manipulation techniques."
-    },
-    {
-      icon: <Shield className="h-8 w-8" />,
-      title: "Privacy",
-      description: "Your data is yours. We process without permanent storage."
-    },
-    {
-      icon: <Check className="h-8 w-8" />,
-      title: "Accuracy",
-      description: "We prioritize correct results over speed, avoiding false positives."
-    }
+    { icon: <Eye className="h-8 w-8" />, title: "Community", description: "Open collaboration where impact and contribution are visible." },
+    { icon: <Database className="h-8 w-8" />, title: "Support", description: "Design, infra, and playbooks reduce time-to-launch." },
+    { icon: <Shield className="h-8 w-8" />, title: "Transparency", description: "Clear contribution logs, revenue share, and governance." },
+    { icon: <Check className="h-8 w-8" />, title: "Ownership", description: "Contributors earn based on value created; platform takes a fair share." }
   ];
 
   return (
@@ -57,25 +29,22 @@ const About = () => {
       <Navbar />
       <main className="pt-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto py-12">
-          {/* Hero Banner with Animation */}
           <div className="text-center mb-16">
             <div className="animate-fade-in opacity-0" style={{ animationDelay: '0.3s' }}>
               <h1 className="text-4xl sm:text-5xl font-bold mb-2">
                 <span className="bg-gradient-to-r from-sc-blue via-sc-violet to-sc-mint bg-clip-text text-transparent">
-                  Soulcloude
+                  {projectName}
                 </span>
               </h1>
               <h2 className="text-2xl sm:text-3xl font-semibold mb-6">
-                Presents
-                <span className="text-sc-blue ml-2">{projectName}</span>
+                A developer-powered venture studio
               </h2>
             </div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto animate-slide-up opacity-0" style={{ animationDelay: '0.6s' }}>
-              In a world blurred by AI, we stand for truth.
+              One brand. Many products. Developers bring ideas; SoulCloude helps build, launch, and scale — with shared revenue for contributors.
             </p>
           </div>
-          
-          {/* Timeline Section */}
+
           <div className="mb-20">
             <h2 className="text-3xl font-bold mb-12 text-center animate-fade-in opacity-0" style={{ animationDelay: '0.9s' }}>Our Journey</h2>
             <div className="relative">
@@ -97,16 +66,18 @@ const About = () => {
               </div>
             </div>
           </div>
-          
-          {/* Mission Section */}
+
           <div className="mb-20">
-            <h2 className="text-3xl font-bold mb-8 text-center animate-fade-in opacity-0" style={{ animationDelay: '2.1s' }}>Our Mission</h2>
-            <div className="glass-card p-8 neon-border-violet text-center mb-12 animate-scale-in opacity-0 hover:scale-105 transition-transform" style={{ animationDelay: '2.4s' }}>
-              <p className="text-xl text-white">
-                "Through {projectName}, we empower humans to verify truth in an age of synthetic media."
-              </p>
+            <h2 className="text-3xl font-bold mb-8 text-center animate-fade-in opacity-0" style={{ animationDelay: '2.1s' }}>What We Are</h2>
+            <div className="glass-card p-8 neon-border-violet text-left mb-12 animate-scale-in opacity-0 hover:scale-105 transition-transform" style={{ animationDelay: '2.4s' }}>
+              <ul className="list-disc list-inside space-y-3 text-gray-300">
+                <li><span className="text-white font-semibold">Primary:</span> Venture Studio / Startup Studio</li>
+                <li><span className="text-white font-semibold">Secondary:</span> Platform-as-a-Studio (PaaS)</li>
+                <li><span className="text-white font-semibold">Ecosystem:</span> One brand, many products (DevToolX, APIHub, EduGame, TaskAI)</li>
+                <li><span className="text-white font-semibold">Community:</span> Open contribution with revenue sharing</li>
+              </ul>
             </div>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {principles.map((principle, index) => (
                 <div 

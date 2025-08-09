@@ -18,7 +18,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0">
               <span className="font-poppins text-xl font-bold text-white">
-                soul<span className="text-sc-blue">cloude</span>
+                Soul<span className="text-sc-blue">Cloude</span>
               </span>
             </Link>
           </div>

@@ -34,20 +34,20 @@ const Contact = () => {
 
   const faqs = [
     {
-      question: "Is my file stored?",
-      answer: "No, files are processed in memory and immediately discarded after analysis unless you explicitly opt to save them for future reference."
+      question: "How do I propose an idea?",
+      answer: "Share a concise problem, solution, and target user. We review for scope, viability, and portfolio fit."
     },
     {
-      question: "How long does detection take?",
-      answer: "Most analyses complete within seconds. Larger files or more complex videos may take 1-2 minutes to process thoroughly."
+      question: "How does revenue sharing work?",
+      answer: "Revenue splits are based on contribution weight and role impact. Payouts are tracked and distributed monthly."
     },
     {
-      question: "How accurate are the results?",
-      answer: "Our detection has a 94% accuracy rate for images and 89% for videos. We clearly indicate confidence levels with each analysis."
+      question: "Do I need to form a company?",
+      answer: "No. Products launch under the SoulCloude brand with contributor agreements that handle IP and payouts."
     },
     {
-      question: "Can I use Soulcloude for commercial purposes?",
-      answer: "Yes, we offer enterprise plans for businesses that need high-volume detection capabilities and additional features."
+      question: "What skills are required?",
+      answer: "Any builder roles are welcome: frontend, backend, devops, design, product, and go-to-market."
     }
   ];
 

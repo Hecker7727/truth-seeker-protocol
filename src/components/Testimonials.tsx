@@ -5,19 +5,19 @@ import { Card, CardContent } from './ui/card';
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "Soulcloude helped me verify the authenticity of content I encounter online. A must-have in today's digital world.",
+      quote: "I shipped my idea as a real product in weeks. SoulCloude gave me a team, brand, and launch playbook.",
       name: "Alex Johnson",
-      title: "Digital Content Creator"
+      title: "Indie Developer"
     },
     {
-      quote: "The speed and accuracy of Soulcloude's detection is impressive. It's become an essential tool for our journalism team.",
+      quote: "The shared design system and infra saved months. Revenue share makes contributions feel meaningful.",
       name: "Morgan Smith",
-      title: "Investigative Journalist"
+      title: "Full-stack Engineer"
     },
     {
-      quote: "This platform gives me peace of mind when reviewing media. The interface is intuitive and the results are reliable.",
+      quote: "I didn’t want to form a company just for one app. SoulCloude let me build and release without the overhead.",
       name: "Taylor Rivera",
-      title: "Social Media Manager"
+      title: "Product Engineer"
     }
   ];
 
@@ -26,7 +26,7 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">What People Are Saying</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">Users from various industries trust Soulcloude to verify content authenticity.</p>
+          <p className="text-gray-400 max-w-2xl mx-auto">Developers and builders launch faster with SoulCloude's platform-as-a-studio model.</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

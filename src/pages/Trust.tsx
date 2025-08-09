@@ -13,9 +13,9 @@ const Trust = () => {
       <main className="pt-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto py-12">
           <div className="text-center mb-16">
-            <h1 className="text-4xl font-bold mb-6">Your Trust Is Sacred</h1>
+            <h1 className="text-4xl font-bold mb-6">Trust, Safety, and Fairness</h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Soulcloude protects your privacy with zero-retention detection.
+              SoulCloude protects contributors and users with clear governance, fair revenue sharing, and secure infrastructure.
             </p>
           </div>
           
@@ -24,33 +24,27 @@ const Trust = () => {
               <div className="flex items-start gap-6">
                 <ShieldCheck className="h-10 w-10 text-sc-mint flex-shrink-0" />
                 <div>
-                  <h2 className="text-2xl font-semibold mb-4">Our Privacy Commitment</h2>
+                  <h2 className="text-2xl font-semibold mb-4">Our Governance Principles</h2>
                   <p className="text-gray-300 mb-6">
-                    At Soulcloude, we believe privacy is a fundamental right. Our detection technology is designed with privacy as a core principle, not an afterthought.
+                    We operate transparently with published contribution logs, code reviews, and clear decision-making.
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="bg-black/30 p-4 rounded-lg">
-                      <h3 className="text-lg font-medium mb-2 text-sc-blue">No Permanent Storage</h3>
+                      <h3 className="text-lg font-medium mb-2 text-sc-blue">Fair Revenue Sharing</h3>
                       <p className="text-gray-400">
-                        Uploaded files are processed in memory and immediately discarded after analysis unless you explicitly opt to save them.
+                        Contributors are rewarded based on measurable impact across roles (engineering, design, PM, GTM). Payouts are documented and auditable.
                       </p>
                     </div>
                     <div className="bg-black/30 p-4 rounded-lg">
-                      <h3 className="text-lg font-medium mb-2 text-sc-blue">End-to-End Encryption</h3>
+                      <h3 className="text-lg font-medium mb-2 text-sc-blue">Code of Conduct</h3>
                       <p className="text-gray-400">
-                        Your data is encrypted during transit and processing, ensuring it remains protected throughout analysis.
+                        A respectful, inclusive community. Harassment-free collaboration is strictly enforced.
                       </p>
                     </div>
                     <div className="bg-black/30 p-4 rounded-lg">
-                      <h3 className="text-lg font-medium mb-2 text-sc-blue">Minimal Data Collection</h3>
+                      <h3 className="text-lg font-medium mb-2 text-sc-blue">Secure Infrastructure</h3>
                       <p className="text-gray-400">
-                        We only collect what's necessary to provide our service, nothing more.
-                      </p>
-                    </div>
-                    <div className="bg-black/30 p-4 rounded-lg">
-                      <h3 className="text-lg font-medium mb-2 text-sc-blue">User Control</h3>
-                      <p className="text-gray-400">
-                        You maintain full control over your data with clear options to delete analysis history.
+                        Access control, least privilege, and regular audits. Sensitive data is protected and minimized.
                       </p>
                     </div>
                   </div>
@@ -96,7 +90,7 @@ const Trust = () => {
                     <ShieldCheck className="h-4 w-4 text-sc-blue" />
                   </div>
                   <p className="text-gray-300">
-                    <strong className="text-white">Regular accuracy reports</strong> - We publish metrics about our detection accuracy across different media types.
+                    <strong className="text-white">Contribution transparency</strong> - Public contribution logs and attribution across roles.
                   </p>
                 </li>
                 <li className="flex items-start">
@@ -104,7 +98,7 @@ const Trust = () => {
                     <ShieldCheck className="h-4 w-4 text-sc-blue" />
                   </div>
                   <p className="text-gray-300">
-                    <strong className="text-white">Model documentation</strong> - We explain how our AI detection works and what signals it looks for.
+                    <strong className="text-white">Project documentation</strong> - Clear specs, roadmaps, decision logs, and review history.
                   </p>
                 </li>
                 <li className="flex items-start">
@@ -112,7 +106,7 @@ const Trust = () => {
                     <ShieldCheck className="h-4 w-4 text-sc-blue" />
                   </div>
                   <p className="text-gray-300">
-                    <strong className="text-white">Clear limitations</strong> - We're honest about what our technology can and cannot detect.
+                    <strong className="text-white">Fair processes</strong> - Transparent revenue share calculations and dispute resolution.
                   </p>
                 </li>
               </ul>
