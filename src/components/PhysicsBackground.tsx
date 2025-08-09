@@ -37,17 +37,13 @@ const PhysicsBackground: React.FC = () => {
 
     // Create stacks of circles with random colors and restitution
     const colors = ['#5CE1E6', '#D6B1FF', '#A5FFD6'];
-    const stack = Composites.stack(50, 0, 12, 6, 10, 10, (x, y) => {
-      const radius = 8 + Math.random() * 18;
+    const stack = Composites.stack(50, 0, 8, 4, 14, 14, (x, y) => {
+      const radius = 8 + Math.random() * 14;
       const c = colors[Math.floor(Math.random() * colors.length)];
       return Bodies.circle(x, y, radius, {
         restitution: 0.9,
         friction: 0.001,
-        render: {
-          fillStyle: c,
-          strokeStyle: 'rgba(255,255,255,0.1)',
-          lineWidth: 1,
-        },
+        render: { fillStyle: c, strokeStyle: 'rgba(255,255,255,0.1)', lineWidth: 1 },
       });
     });
 
@@ -72,18 +68,12 @@ const PhysicsBackground: React.FC = () => {
     Runner.run(runner, engine);
     Render.run(render);
 
-    // Mouse constraint for playful interaction
-    const mouse = Mouse.create(render.canvas);
-    const mouseConstraint = MouseConstraint.create(engine, {
-      mouse,
-      constraint: {
-        stiffness: 0.2,
-        render: { visible: false },
-      },
-    });
-    World.add(engine.world, mouseConstraint);
+    // Remove mouse constraint for perf
+    // const mouse = Mouse.create(render.canvas);
+    // const mouseConstraint = MouseConstraint.create(engine, { mouse, constraint: { stiffness: 0.2, render: { visible: false } } });
+    // World.add(engine.world, mouseConstraint);
     // keep the mouse in sync with rendering
-    (render as any).mouse = mouse;
+    // (render as any).mouse = mouse;
 
     const handleResize = () => {
       const w = window.innerWidth;

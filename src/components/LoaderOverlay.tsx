@@ -4,12 +4,19 @@ const LoaderOverlay: React.FC<{ onDone?: () => void }> = ({ onDone }) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    const seen = sessionStorage.getItem('sc_loader_seen');
+    if (seen) {
+      setProgress(100);
+      onDone?.();
+      return;
+    }
     let raf: number;
     const step = () => {
       setProgress((p) => {
         const next = Math.min(100, p + Math.max(0.5, (100 - p) * 0.04));
         if (next >= 100) {
           cancelAnimationFrame(raf);
+          sessionStorage.setItem('sc_loader_seen', '1');
           setTimeout(() => onDone?.(), 150);
         }
         return next;
